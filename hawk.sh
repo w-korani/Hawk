@@ -141,6 +141,7 @@ else
       do
          (
          id=$(cat "$tmpDir"/back_"$back".txt | head -1 | tr '\t' '\n' | sed -n "$x p" )
+         echo "BG:  $x out of $(cat "$tmpDir"/back_"$back".txt | head -1 | wc -w)"
          cat "$tmpDir"/back_"$back".txt | cut -f 1-3,$x | grep -v "-" | awk -v dominance=$dominance '{isdominancematch=0; nA=split($4,A,","); if(NR ==1) {print $2"\t"$3"\t"$4"\t"$4"\t"$4 } else{ if(nA==1){ if($1==$4){X=1} else {X=0} } else {X=0; for(a=1;a<=nA;++a) { if(A[a]==$1){X=dominance; isdominancematch=1; break}  } }; print $1"\t"$2"\t"$3"\t"X"\t"isdominancematch }  }' | grep -vw "NA$" | sed "s:$:\t$id:g" | sed '1d' > "$tmpDir"/back_"$back"_"$x".txt 
          cat "$tmpDir"/back_"$back"_"$x".txt | awk '{X+=$4}END{if(NR==0){print "00.0;0"} else {printf "%0.2f;%s\n", X/NR,NR}}' | sed "s:^:$(cat "$tmpDir"/back_"$back".txt | cut -f $x | head -1)\t:g" | sed "s:^:$x\t:g" > "$tmpDir"/back_"$back"_"$x".txt2
          ) &

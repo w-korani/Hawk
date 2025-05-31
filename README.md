@@ -49,7 +49,7 @@ Tab-delimited file containing similarity scores for each sample and QTL informat
 |4         | **Number of variants per trait:** Comma-delimited list of the number of variants found per trait region (in the order shown in the header line).                                                        | `14,453,7`      |
 |5         | **Range of the trait region:** Start and stop positions of the trait regions (in the order shown in the header line).                                                            | `1594957-1964360,40138292-149634268,152278500-153931210`      |
 |6         | **Length of each region:** Length of each trait region in bp (in the order shown in the header line).                                                          | `369403,109495976,1652710`      |
-|7         | **Background parent similarity and variant count:** Similarity score to the background parent and the number of variants after dropping all QTL.                                                          | `0.65;2602`      |
+|7         | **Background parent similarity and variant count:** Similarity score to the background parent and the number of variants after dropping all QTL. It is an addon column, added to the output only if "background" argument is assigned                                                          | `0.65;2602`      |
 
 **Example**
 ```bash

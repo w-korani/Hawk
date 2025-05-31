@@ -11,7 +11,7 @@ helpFunc()
    \033[46m-/--panmap\033[0m          input panmap file
    \033[46m-/--background\033[0m      string of background parents in comma delimted format, default no background parent, All to use all parents of the panmap file
    \033[46m-/--MinDep\033[0m          int of the minimum number of variants in region/sample without missing,to be calcuated, default is 5
-   \033[46m-/--dominance\033[0m       float (NA or 0:1); NA means het will not be counted, default is partial domimance 1
+   \033[46m-/--dominance\033[0m       float (NA or 0:1); NA means het will not be counted, default is complete domimance 1
    \033[46m-/--clean\033[0m           clean tmp folder/files
    \033[46m-/--graph\033[0m  if the run will produce RDs object for visualization [0 or 1; default=0]
    \033[46m-/--u\033[0m   unniquenes of the QTL donor allele [0 or 1, default 1]

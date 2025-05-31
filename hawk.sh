@@ -1,10 +1,8 @@
 #!/bin/bash
-khufu_dir="/cluster/projects/khufu/qtl_seq_II/khufu_II"
-source "$khufu_dir"/utilities/load_modules.sh
+##################
 ##################
 helpFunc()
 {
-   "$khufu_dir"/utilities/logo.sh
    echo -e "
    Usage:              \033[46m$0 -bed asd.bed -panmap asd.panmap -background "asd1,asd2"\033[0m
    \033[46m-/--t\033[0m               number of threads

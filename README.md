@@ -12,7 +12,7 @@ Hawk is designed to be used with our [custom PanMap file](https://www.biorxiv.or
 
 Alleles in the PanMap are encoded using integers and the actual allele sequences are stored in a corresponding FASTA file. 
 
-To convert other input formats to our PanMap format and to generate the corresponding FASTA file, we recommend using our [KhufuEnv](https://github.com/w-korani/KhufuEnv) tools, `vcf2panmap` or `hapmap2panmap` and `panmapGetFasta`.
+To convert other input formats to our PanMap format and to generate the corresponding FASTA file, we recommend using our [KhufuEnv](https://github.com/w-korani/KhufuEnv) tools, `vcf2panmap` or `hapmap2panmap`.
 
 **Khufu PanMap Example**
 ![F2 large](https://github.com/user-attachments/assets/aa84fc5a-816d-43fa-937a-2bb500dc90a8)
@@ -96,3 +96,4 @@ hawk.sh -panmap test.panmap -bed test.bed -graph 1 -MinDep 5 -dominance 1 -o tes
 | `--clean`      | Set to `1` to clean intermediate files, or `0` to keep. Default is `1`.       |
 
 ## Citation
+Hawk is currently in pre-publication.

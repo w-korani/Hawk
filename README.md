@@ -86,7 +86,7 @@ hawk.sh -panmap test.panmap -bed test.bed -graph 1 -MinDep 5 -dominance 1 -o tes
 | `-h`           | Display the help menu.                                                       |
 | `-t`           | Number of threads to use.                                                    |
 | `-o`           | Output file name.                                                            |
-| `-u`          | Set to `1` to require donor allele uniqueness or `0` to allow consideration of all donor alleles. Default is `1`.                                             |
+| `-u`          | Set to `1` to require donor allele uniqueness within QTL regions or `0` to allow counting alleles if they are shared by other parents. Default is `1`.                                             |
 | `--bed`        | Input QTL BED file.                                                          |
 | `--panmap`     | Input PanMap file.                                                           |
 | `--background`     | Comma-delimited list of background parents. ex: `parent1,parent2`. Default is no background parents. Set to `All` to use all parents.          |

@@ -88,7 +88,7 @@ inx=$(cat $panmap | cut -f 4  | head -1 | tr ',' '\n' | grep -nE $(echo $par | s
 # drop not unique or have 0
 cat "$tmpDir"/panmap.$y.txt | cut -f 4  | sed "1d" | awk -v inx=$(echo $inx | tr ' ' ',') '{nA=split($0,A,",");nB=split(inx,B,","); X1=""; for(b=1;b<=nB;++b){X1=X1","A[B[b]]}; X1=substr(X1,2); print X1"\t"$0 }' | awk '{if($1 ~ "0") {print $0"\tOUT"} else {print $0"\tIN"} } ' | awk '{nA=split($1,A,","); for (a=1;a<=nA;++a){gsub(A[a],"U",$0) } }'1  | awk '{nA=split($1,A,","); print gsub("U","",$2)"\t"nA"\t"$3}' | awk '{if($1==$2 && $3 == "IN") {print 1} else {print 0} }' | sed "1i1"| paste - "$tmpDir"/panmap.$y.txt  | awk -v u=$u '{if($1>=u) print $0}' | cut -f 2- > "$tmpDir"/panmap.$y.txt2A
 # drop multiple allele for the parents
-cat "$tmpDir"/panmap.$y.txt2A | cut -f 4  | sed "1d" | awk -v inx=$(echo $inx | tr ' ' ',') '{nA=split($0,A,",");nB=split(inx,B,","); X1=""; for(b=1;b<=nB;++b){X1=X1","A[B[b]]}; X1=substr(X1,2); print X1 }' | SortUniqueValuesDS | sed "1i1\t1"| paste - "$tmpDir"/panmap.$y.txt2A  | awk '{nA=split($1,A,","); if(nA==1) print $0}' | sed "1 s:^.*chr:1\tchr:g" > "$tmpDir"/panmap.$y.txt2
+cat "$tmpDir"/panmap.$y.txt2A | cut -f 4  | sed "1d" | awk -v inx=$(echo $inx | tr ' ' ',') '{nA=split($0,A,",");nB=split(inx,B,","); X1=""; for(b=1;b<=nB;++b){X1=X1","A[B[b]]}; X1=substr(X1,2); print X1 }' | sortUniqueValuesDS | sed "1i1\t1"| paste - "$tmpDir"/panmap.$y.txt2A  | awk '{nA=split($1,A,","); if(nA==1) print $0}' | sed "1 s:^.*chr:1\tchr:g" > "$tmpDir"/panmap.$y.txt2
 
    if [[ "$graph" == 1 ]]
    then

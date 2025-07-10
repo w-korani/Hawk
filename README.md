@@ -1,5 +1,7 @@
 # Hawk
 
+<img width="494" height="366" alt="Image" src="https://github.com/user-attachments/assets/6c483b19-2db7-41b9-9511-c8c035c6143e" />
+
 ## Overview
 **Hawk** is a lightweight tool designed to facilitate the selection of elite plants and animals based on known Quantitative Trait Loci (QTLs). It uses our [custom PanMap file](https://www.biorxiv.org/content/10.1101/2025.03.28.645917v1.full) and QTL BED file to identify lines carrying favorable alleles at key loci, enabling marker-assisted selection for precision breeding.
 
